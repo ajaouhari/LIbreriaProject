@@ -40,7 +40,8 @@ namespace WindowsFormsApp1
         #region Methods
         private void Home_Load(object sender, EventArgs e)
         {
-
+            //dafklsjfalksjfñaksjfñaksjfañlksd
+            //Llamo al metodo que rellena el ARRAYLIST de la libreria
             FillContents.FillLibrary(this.LstLibrerias); 
             
             foreach (var item in this.LstLibrerias)
