@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
             }          
         }
 
-
+        //Se ejecuta cuando esta en primer plano el formulario
         private void Home_Activated(object sender, EventArgs e)
         {
             if (ConstantText.RefresList) 
