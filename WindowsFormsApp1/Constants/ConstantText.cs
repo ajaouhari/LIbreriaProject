@@ -8,6 +8,20 @@ namespace WindowsFormsApp1.Constants
 {
     public static class ConstantText
     {
+        #region Fields
+
+
+        #endregion
+
+        #region Proprietes
+
         public static bool RefresList { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        #endregion
+
     }
 }

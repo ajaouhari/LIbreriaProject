@@ -15,28 +15,36 @@ namespace WindowsFormsApp1
 {
     public partial class Edit : Form
     {
-        public string example = "";
 
-        
+        #region Fields
 
+
+        #endregion
+
+        #region Proprietes
+
+
+
+        #endregion
+
+        #region Constructor
         public Edit()
         {
             InitializeComponent();
         }
 
-        //public Edit(bool refresh_List) : this()
-        //{
-            
-        //}
 
         private void Edit_Load(object sender, EventArgs e)
         {
            
         }
 
+        #endregion
+
+        #region Methods
         private void Edit_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -49,7 +57,9 @@ namespace WindowsFormsApp1
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        #endregion
     }
 }
