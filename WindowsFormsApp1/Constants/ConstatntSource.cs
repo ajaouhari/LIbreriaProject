@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Constants
 {
-    public static class ConstantText
+    public static class ConstatntSource
     {
-        public static bool RefresList { get; set; }
+        
     }
 }

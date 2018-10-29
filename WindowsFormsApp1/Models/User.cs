@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class User
+    public class User
     {
+        private const int MarginWidth = 4;
+        private const int MarginHeight = 4;
     }
 }

@@ -10,31 +10,26 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class UserControl1 : UserControl
+    public partial class LibraryUserControl : UserControl
     {
-        Home rc;
 
-        public UserControl1()
+        public LibraryUserControl()
         {
-            InitializeComponent();
-          
+            InitializeComponent(); 
+            
         }
 
-        public UserControl1(Libreria lb, Home rc) : this()
+        public LibraryUserControl(Libreria lb) : this()
         {
             this.Nombre.Text = lb.Name;
             this.Descripcion.Text = lb.Decription;
 
-            this.rc = rc;
-                       
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            rc.salir = false;
-            Console.WriteLine(rc.salir);
-            Edit ac = new Edit(rc);
-            ac.ShowDialog();
+            Edit editWindows = new Edit();
+            editWindows.ShowDialog();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -45,9 +40,6 @@ namespace WindowsFormsApp1
         private void Eliminar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this.Descripcion.Text, "Le has dado a la libreria", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-
-
         }
     }
 }

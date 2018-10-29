@@ -7,56 +7,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Constants;
+using WindowsFormsApp1.Models;
+using WindowsFormsApp1.Utils;
 
 namespace WindowsFormsApp1
 {
+
     public partial class Home : Form
     {
-        public bool salir = false;
+
+        #region Fields
+
+        #endregion
+
+        #region Properties
+        public List<Libreria> LstLibrerias { get; set; }
+        public List<User> LstUsers { get; set; } 
+       
+        #endregion
+
+        #region Constructor
         public Home()
         {
-            
             InitializeComponent();
-
-            List<Libreria> ListLibrerias = new List<Libreria>();
-            //List<UserControl1> ListUserControl = new List<UserControl1>();
-
-            ListLibrerias.Add(new Libreria("Ejemplo1", "Ejemplo1", "Ejemplo1", "Ejemplo1"));
-            ListLibrerias.Add(new Libreria("Ejemplo2", "Ejemplo2", "Ejemplo2", "Ejemplo2"));
-
-           
-
-            //rellenamos el arraylist de Usercontrol
-            foreach (var item in ListLibrerias)
-            {
-                UserControl1 fc = new UserControl1(item,this);
-                flowLayoutPanel1.Controls.Add(fc);
-            }
-
-            //foreach (var item in ListLibrerias)
-            //{
-            //    string libre = "ali";
-            //    if (item.Name.Equals(libre))
-            //    {
-            //        ListLibrerias.Remove(item);
-            //    }
-            //}
-                
+            this.LstLibrerias = new List<Libreria>();
+            this.LstUsers = new List<User>();           
         }
 
-        private void userControl11_click(object sender, EventArgs e)
+        #endregion
+
+        #region Methods
+        private void Home_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+
+            FillContents.FillLibrary(this.LstLibrerias); 
+            
+            foreach (var item in this.LstLibrerias)
+            {
+                LibraryUserControl LUC = new LibraryUserControl(item);
+                this.LibraryPanel.Controls.Add(LUC);
+
+            }          
         }
+
 
         private void Home_Activated(object sender, EventArgs e)
         {
-            if (salir)
+            if (ConstantText.RefresList) 
             {
-                
-            }
-
-            Console.WriteLine(this.salir);
+                MessageBox.Show("Se han actualizado las librerias");
+                ConstantText.RefresList = false;
+            }                      
         }
+        #endregion
     }
 }
