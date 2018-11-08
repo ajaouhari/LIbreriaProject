@@ -8,18 +8,76 @@ using WindowsFormsApp1.Models;
 namespace WindowsFormsApp1
 {
     public class Libreria
-    {       
-        public string Name { get; set; }
-        public string Photo { get; set; }
-        public string Decription { get; set; }
-        public string Address { get; set; }
+    {
 
-        public Libreria(string name, string photo, string decription, string address)
+        #region Fields
+
+        private string name;
+        private string photo;
+        private string description;
+        private string address;
+
+        #endregion
+
+        #region Properties
+
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+        public string Photo
+        {
+            get => photo;
+            set => photo = value;
+        }
+        public string Description
+        {
+            get => description;
+            set => description = value;
+        }
+        public string Address
+        {
+            get => address;
+            set => address = value;
+        }
+
+        public Libreria(string name, string photo, string description, string address)
         {
             Name = name;
             Photo = photo;
-            Decription = decription;
+            Description = description;
             Address = address;
         }
+
+
+
+
+
+        #endregion
+
+        #region Contrstructor
+
+
+
+
+        #endregion
+
+        #region Public methods
+
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+
+        #region Static Methods
+
+        #endregion
+
+
+
+
+
     }
 }

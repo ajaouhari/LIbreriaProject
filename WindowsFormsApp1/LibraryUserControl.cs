@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         public LibraryUserControl(Libreria lb) : this()
         {
             this.Nombre.Text = lb.Name;
-            this.Descripcion.Text = lb.Decription;
+            this.Descripcion.Text = lb.Description;
 
         }
 
