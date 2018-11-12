@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         private string photo;
         private string description;
         private string address;
+        private int id;
 
         #endregion
 
@@ -41,29 +42,32 @@ namespace WindowsFormsApp1
             get => address;
             set => address = value;
         }
-
-        public Libreria(string name, string photo, string description, string address)
+        public int Id
         {
-            Name = name;
-            Photo = photo;
-            Description = description;
-            Address = address;
+            get => id;
+            set => id = value;
         }
-
-
-
 
 
         #endregion
 
         #region Contrstructor
 
-
+        public Libreria(string name, string photo, string description, string address, int id)
+        {
+            Name = name;
+            Photo = photo;
+            Description = description;
+            Address = address;
+            Id = id;
+        }
 
 
         #endregion
 
         #region Public methods
+
+
 
         #endregion
 
@@ -73,11 +77,19 @@ namespace WindowsFormsApp1
 
         #region Static Methods
 
+        public static void FillLibrary(List<Libreria> LstLibrerias)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                LstLibrerias.Add(new Libreria("Libreria " + i, "", "Libreria " + i, "Libreria " + i, i));
+            }
+
+            LstLibrerias.Add(new Libreria("Libreria pollagrande", @"C:\Users\bitJavi\Pictures\abdel1.jpg", "Libreria ", "Libreria ", 78));
+           
+
+
+        }
         #endregion
-
-
-
-
 
     }
 }

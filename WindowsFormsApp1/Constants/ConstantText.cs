@@ -17,6 +17,10 @@ namespace WindowsFormsApp1.Constants
 
         public static bool RefresList { get; set; }
 
+        public static Home Home { get; set; }
+
+        public static Libreria Library { get; set; }
+
         #endregion
 
         #region Methods

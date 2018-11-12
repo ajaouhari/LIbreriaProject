@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryUserControl));
             this.Editar = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Foto = new System.Windows.Forms.PictureBox();
@@ -59,7 +58,6 @@
             // 
             // Foto
             // 
-            this.Foto.Image = ((System.Drawing.Image)(resources.GetObject("Foto.Image")));
             this.Foto.Location = new System.Drawing.Point(3, 3);
             this.Foto.Name = "Foto";
             this.Foto.Size = new System.Drawing.Size(198, 153);
@@ -116,7 +114,7 @@
             this.Descripcion.TabIndex = 6;
             this.Descripcion.Text = "Ejemplo libreria";
             // 
-            // UserControl1
+            // LibraryUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +125,7 @@
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Foto);
             this.Controls.Add(this.Editar);
-            this.Name = "UserControl1";
+            this.Name = "LibraryUserControl";
             this.Size = new System.Drawing.Size(204, 255);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Foto)).EndInit();

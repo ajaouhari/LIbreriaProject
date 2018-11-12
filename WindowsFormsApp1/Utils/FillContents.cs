@@ -27,14 +27,7 @@ namespace WindowsFormsApp1.Utils
 
         #region Methods
 
-        public static void FillLibrary(List<Libreria> LstLibrerias)
-        {
-            for (int i = 0; i < 50; i++)
-            {
-                LstLibrerias.Add(new Libreria("Libreria " + i, "Libreria " + i, "Libreria " + i, "Libreria " + i));
-            }
-                    
-        }
+
         #endregion
 
     }

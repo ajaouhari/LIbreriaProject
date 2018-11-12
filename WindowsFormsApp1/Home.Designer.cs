@@ -37,7 +37,7 @@
             this.LibraryPanel.AutoScroll = true;
             this.LibraryPanel.Location = new System.Drawing.Point(12, 12);
             this.LibraryPanel.Name = "LibraryPanel";
-            this.LibraryPanel.Size = new System.Drawing.Size(252, 367);
+            this.LibraryPanel.Size = new System.Drawing.Size(924, 402);
             this.LibraryPanel.TabIndex = 1;
             // 
             // label1
@@ -53,7 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 391);
+            this.ClientSize = new System.Drawing.Size(948, 426);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LibraryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

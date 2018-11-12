@@ -31,19 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.foto = new System.Windows.Forms.PictureBox();
             this.SearchImage = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.description = new System.Windows.Forms.RichTextBox();
+            this.ImageSelector = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 18);
+            this.label1.Location = new System.Drawing.Point(26, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -52,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 49);
+            this.label2.Location = new System.Drawing.Point(26, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -61,32 +62,34 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 161);
+            this.label3.Location = new System.Drawing.Point(75, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Imagen";
             // 
-            // pictureBox1
+            // foto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 129);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.foto.Location = new System.Drawing.Point(29, 194);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(331, 193);
+            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto.TabIndex = 3;
+            this.foto.TabStop = false;
             // 
             // SearchImage
             // 
-            this.SearchImage.Location = new System.Drawing.Point(236, 156);
+            this.SearchImage.Location = new System.Drawing.Point(285, 165);
             this.SearchImage.Name = "SearchImage";
             this.SearchImage.Size = new System.Drawing.Size(75, 23);
             this.SearchImage.TabIndex = 4;
             this.SearchImage.Text = "Seleccionar...";
             this.SearchImage.UseVisualStyleBackColor = true;
+            this.SearchImage.Click += new System.EventHandler(this.SearchImage_Click);
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(113, 329);
+            this.Save.Location = new System.Drawing.Point(162, 413);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(117, 23);
             this.Save.TabIndex = 5;
@@ -96,7 +99,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(236, 329);
+            this.Cancel.Location = new System.Drawing.Point(285, 413);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 6;
@@ -104,32 +107,36 @@
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
-            // textBox1
+            // nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 20);
-            this.textBox1.TabIndex = 7;
+            this.nombre.Location = new System.Drawing.Point(143, 23);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(217, 20);
+            this.nombre.TabIndex = 7;
             // 
-            // richTextBox1
+            // description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(94, 44);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(217, 106);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.description.Location = new System.Drawing.Point(143, 49);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(217, 106);
+            this.description.TabIndex = 9;
+            this.description.Text = "";
+            // 
+            // ImageSelector
+            // 
+            this.ImageSelector.FileName = "openFileDialog1";
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 358);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(386, 448);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.SearchImage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.foto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -137,7 +144,7 @@
             this.Text = "Edit";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Edit_FormClosed);
             this.Load += new System.EventHandler(this.Edit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,11 +155,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.Button SearchImage;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.RichTextBox description;
+        private System.Windows.Forms.OpenFileDialog ImageSelector;
     }
 }
