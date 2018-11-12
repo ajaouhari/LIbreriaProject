@@ -14,6 +14,7 @@ using WindowsFormsApp1.Utils;
 namespace WindowsFormsApp1
 {
 
+
     public partial class Home : Form
     {
 
@@ -23,10 +24,8 @@ namespace WindowsFormsApp1
         #endregion
 
         #region Properties
-
         public List<Libreria> LstLibrerias { get; set; }
         public List<User> LstUsers { get; set; }
-
         #endregion
 
         #region Constructor
@@ -36,6 +35,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.LstLibrerias = new List<Libreria>();
             this.LstUsers = new List<User>();
+
+
         }
 
         #endregion
@@ -44,13 +45,12 @@ namespace WindowsFormsApp1
         private void Home_Load(object sender, EventArgs e)
         {
 
-
-            //Llamo al metodo que rellena el ARRAYLIST de la libreria
             Libreria.FillLibrary(this.LstLibrerias);
 
             foreach (var item in this.LstLibrerias)
             {
-                LibraryUserControl LUC = new LibraryUserControl(item);
+                var lb = item;
+                LibraryUserControl LUC = new LibraryUserControl(ref lb);
                 this.LibraryPanel.Controls.Add(LUC);
 
             }
@@ -61,14 +61,12 @@ namespace WindowsFormsApp1
         {
             if (ConstantText.RefresList)
             {
-                //MessageBox.Show("Se han actualizado las librerias");
-
+                MessageBox.Show("Se han actualizado las librerias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.LibraryPanel.Refresh();
+                ConstantText.RefresList = false;
 
-                    
             }
         }
-
 
 
         #endregion
@@ -82,8 +80,7 @@ namespace WindowsFormsApp1
             LstLibrerias.Remove(itemToRemove);
 
             foreach (LibraryUserControl c in LibraryPanel.Controls)
-            {        
-
+            {
                 if (c.IdLibreria == id)
                 {
                     LibraryPanel.Controls.Remove(c);
@@ -91,8 +88,24 @@ namespace WindowsFormsApp1
             }
 
             this.LibraryPanel.Refresh();
-            
+
         }
         #endregion
+
+        #region Static Methods
+
+
+        #endregion
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("¿Seguro que quiere salir?", "¡Atención!", MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Information);
+
+            if (dr == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

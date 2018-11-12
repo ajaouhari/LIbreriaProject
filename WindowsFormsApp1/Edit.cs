@@ -34,10 +34,9 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public Edit(Libreria lb) : this()
-        {
-             
-            foto.Image = Image.FromFile(lb.Photo);
+        public Edit(ref Libreria lb) : this()
+        {             
+            //foto.Image = Image.FromFile(lb.Photo);
             description.Text = lb.Description;
             nombre.Text = lb.Name;
             Lb = lb;
@@ -50,7 +49,30 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        #region Methods
+        #region  Public Methods
+
+
+        #endregion
+
+        #region Private Methods
+
+        private void SearchImage_Click(object sender, EventArgs e)
+        {
+            if (ImageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string sFileName = ImageSelector.FileName;
+
+                foto.Image = Image.FromFile(sFileName);
+
+                if (!string.IsNullOrEmpty(sFileName))
+                {
+                    //Lb.Photo = sFileName;
+                }
+
+
+            }
+        }
+
         private void Edit_FormClosed(object sender, FormClosedEventArgs e)
         {
             ConstantText.RefresList = true;
@@ -58,15 +80,14 @@ namespace WindowsFormsApp1
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(nombre.Text) && string.IsNullOrEmpty(description.Text))){
+            if (!(string.IsNullOrEmpty(nombre.Text) && string.IsNullOrEmpty(description.Text)))
+            {
 
                 Lb.Description = description.Text;
                 Lb.Name = nombre.Text;
-                Lb.Photo = string.IsNullOrEmpty(foto.ImageLocation) ? Lb.Photo : foto.ImageLocation;
+                //Lb.Photo = string.IsNullOrEmpty(foto.ImageLocation) ? Lb.Photo : foto.ImageLocation;
 
                 this.Close();
-                
-                
 
             }
             else
@@ -82,22 +103,6 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private void SearchImage_Click(object sender, EventArgs e)
-        {
 
-            if (ImageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                string sFileName = ImageSelector.FileName;
-
-                foto.Image = Image.FromFile(sFileName);
-
-                if (!string.IsNullOrEmpty(sFileName))
-                {
-                    Lb.Photo = sFileName;
-                }
-
-
-            }
-        }
     }
 }

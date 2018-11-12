@@ -13,39 +13,47 @@ namespace WindowsFormsApp1
 {
     public partial class LibraryUserControl : UserControl
     {
-        public int IdLibreria;
+        #region Properties
+
+        public int IdLibreria { get; set; }
         public Libreria Lb;
+
+        #endregion
+
+        #region Public Methods
 
         public LibraryUserControl()
         {
             InitializeComponent();
-
         }
 
-        public LibraryUserControl(Libreria lb) : this()
+        public LibraryUserControl(ref Libreria lb) : this()
         {
-            this.Nombre.Text = lb.Name;
-            this.Descripcion.Text = lb.Description;
-            this.IdLibreria = lb.Id;
-            lb.Photo = string.IsNullOrEmpty(lb.Photo) ? @"C:\Users\bitJavi\Pictures\abdel.jpg" : lb.Photo;
-            this.Foto.Image = Image.FromFile(lb.Photo);
-            this.Lb = lb;
-
+            IdLibreria = lb.Id;
+            Nombre.Text = lb.Name;
+            Descripcion.Text = lb.Description;
+            //lb.Photo = string.IsNullOrEmpty(lb.Photo) ? @"C:\Users\bitJavi\Pictures\abdel.jpg" : lb.Photo;
+            //this.Foto.Image = Image.FromFile(lb.Photo);
+            Lb = lb;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void RefreshLabels()
         {
-            Edit editWindows = new Edit(Lb);
+            this.Nombre.Text = Lb.Name;
+            this.Descripcion.Text = Lb.Description;
+            //Foto.Image = Image.FromFile(Lb.Photo);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Edit editWindows = new Edit(ref Lb);
             editWindows.ShowDialog();
 
-
-            Nombre.Text = Lb.Name;
-            Descripcion.Text = Lb.Description;
-            Foto.Image = Image.FromFile(Lb.Photo);
-
-            ConstantText.RefresList = false;
-
-
+            RefreshLabels();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -56,19 +64,24 @@ namespace WindowsFormsApp1
         private void Eliminar_Click(object sender, EventArgs e)
         {
 
-            DialogResult dr = MessageBox.Show("Message.", "Title", MessageBoxButtons.YesNoCancel,
+            DialogResult dr = MessageBox.Show("¿Seguro que quiere eliminar esta libreria?", "¡Atención!", MessageBoxButtons.OKCancel,
                MessageBoxIcon.Information);
 
-            if (dr == DialogResult.Yes)
+            if (dr == DialogResult.OK)
             {
-                if (IdLibreria >= 0)
+                if (Lb.Id >= 0)
                 {
-                    ConstantText.Home.DelteFromList(IdLibreria);
+                    ConstantText.Home.DelteFromList(Lb.Id);
 
                 }
             }
-
-
         }
+
+        #endregion
+
+        #region Static Methods
+
+        #endregion
+
     }
 }

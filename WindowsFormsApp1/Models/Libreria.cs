@@ -7,7 +7,7 @@ using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1
 {
-    public class Libreria
+    public class Libreria :BaseClass
     {
 
         #region Fields
@@ -61,7 +61,6 @@ namespace WindowsFormsApp1
             Address = address;
             Id = id;
         }
-
 
         #endregion
 
