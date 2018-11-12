@@ -32,8 +32,8 @@ namespace WindowsFormsApp1
             IdLibreria = lb.Id;
             Nombre.Text = lb.Name;
             Descripcion.Text = lb.Description;
-            //lb.Photo = string.IsNullOrEmpty(lb.Photo) ? @"C:\Users\bitJavi\Pictures\abdel.jpg" : lb.Photo;
-            //this.Foto.Image = Image.FromFile(lb.Photo);
+            lb.Photo = string.IsNullOrEmpty(lb.Photo) ? @"C:\Users\bitJavi\Pictures\abdel.jpg" : lb.Photo;
+            this.Foto.Image = Image.FromFile(lb.Photo);
             Lb = lb;
         }
 

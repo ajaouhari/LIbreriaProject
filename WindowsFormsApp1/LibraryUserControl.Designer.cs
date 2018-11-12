@@ -62,6 +62,7 @@
             this.Foto.Location = new System.Drawing.Point(3, 3);
             this.Foto.Name = "Foto";
             this.Foto.Size = new System.Drawing.Size(201, 153);
+            this.Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Foto.TabIndex = 1;
             this.Foto.TabStop = false;
             // 

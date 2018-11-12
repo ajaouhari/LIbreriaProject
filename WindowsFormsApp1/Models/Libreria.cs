@@ -78,14 +78,10 @@ namespace WindowsFormsApp1
 
         public static void FillLibrary(List<Libreria> LstLibrerias)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 50; i++)
             {
-                LstLibrerias.Add(new Libreria("Libreria " + i, "", "Libreria " + i, "Libreria " + i, i));
+                LstLibrerias.Add(new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i));
             }
-
-            LstLibrerias.Add(new Libreria("Libreria pollagrande", @"C:\Users\bitJavi\Pictures\abdel1.jpg", "Libreria ", "Libreria ", 78));
-           
-
 
         }
         #endregion
