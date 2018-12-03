@@ -11,7 +11,6 @@ namespace WindowsFormsApp1.Models
     {
         public Home Home { get; set; }
         
-
     }
 
 

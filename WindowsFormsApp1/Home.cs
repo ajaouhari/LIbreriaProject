@@ -47,9 +47,9 @@ namespace WindowsFormsApp1
 
             Libreria.FillLibrary(this.LstLibrerias);
 
-            foreach (var item in this.LstLibrerias)
+            foreach (var Libreria in this.LstLibrerias)
             {
-                var lb = item;
+                var lb = Libreria;
                 LibraryUserControl LUC = new LibraryUserControl(ref lb);
                 this.LibraryPanel.Controls.Add(LUC);
 
@@ -65,6 +65,7 @@ namespace WindowsFormsApp1
                 this.LibraryPanel.Refresh();
                 ConstantText.RefresList = false;
 
+                Libreria.SaveLibraryJSON(LstLibrerias);
             }
         }
 
@@ -75,9 +76,9 @@ namespace WindowsFormsApp1
 
         public void DelteFromList(int id)
         {
-
-            var itemToRemove = LstLibrerias.Single(r => r.Id == id);
-            LstLibrerias.Remove(itemToRemove);
+            //Elimina la libreria del array
+            var LibreriaEncontrada = LstLibrerias.Single(L => L.Id == id);
+            LstLibrerias.Remove(LibreriaEncontrada);
 
             foreach (LibraryUserControl c in LibraryPanel.Controls)
             {
@@ -107,5 +108,7 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+
+
     }
 }

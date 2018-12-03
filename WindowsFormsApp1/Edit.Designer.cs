@@ -31,61 +31,61 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.foto = new System.Windows.Forms.PictureBox();
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
             this.SearchImage = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.TextBox();
             this.description = new System.Windows.Forms.RichTextBox();
             this.ImageSelector = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 24);
+            this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 24);
+            this.label2.Size = new System.Drawing.Size(121, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Descripción";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 24);
+            this.label3.Size = new System.Drawing.Size(79, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Imagen";
             // 
-            // foto
+            // fotoPictureBox
             // 
-            this.foto.Location = new System.Drawing.Point(29, 211);
-            this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(331, 183);
-            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto.TabIndex = 3;
-            this.foto.TabStop = false;
+            this.fotoPictureBox.Location = new System.Drawing.Point(29, 211);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(331, 183);
+            this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPictureBox.TabIndex = 3;
+            this.fotoPictureBox.TabStop = false;
             // 
             // SearchImage
             // 
-            this.SearchImage.Font = new System.Drawing.Font("Agency FB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchImage.Location = new System.Drawing.Point(211, 161);
+            this.SearchImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchImage.Location = new System.Drawing.Point(143, 161);
             this.SearchImage.Name = "SearchImage";
-            this.SearchImage.Size = new System.Drawing.Size(149, 36);
+            this.SearchImage.Size = new System.Drawing.Size(217, 37);
             this.SearchImage.TabIndex = 4;
             this.SearchImage.Text = "Seleccionar imagen...";
             this.SearchImage.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             // 
             // Save
             // 
-            this.Save.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save.Location = new System.Drawing.Point(162, 400);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(117, 36);
@@ -105,7 +105,7 @@
             // Cancel
             // 
             this.Cancel.BackColor = System.Drawing.Color.Red;
-            this.Cancel.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.Location = new System.Drawing.Point(285, 400);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 36);
@@ -144,7 +144,7 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.SearchImage);
-            this.Controls.Add(this.foto);
+            this.Controls.Add(this.fotoPictureBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -152,7 +152,7 @@
             this.Text = "Edit";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Edit_FormClosed);
             this.Load += new System.EventHandler(this.Edit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,12 +163,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.Button SearchImage;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.RichTextBox description;
         private System.Windows.Forms.OpenFileDialog ImageSelector;
+        public System.Windows.Forms.PictureBox fotoPictureBox;
     }
 }

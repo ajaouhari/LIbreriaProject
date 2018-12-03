@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1
 {
-    public class Libreria :BaseClass
+    public class Libreria : BaseClass
     {
 
         #region Fields
@@ -80,10 +81,20 @@ namespace WindowsFormsApp1
         {
             for (int i = 0; i < 50; i++)
             {
-                LstLibrerias.Add(new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i));
+                Libreria factura1 = new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i);
+                LstLibrerias.Add(factura1);
             }
 
         }
+
+        public static void SaveLibraryJSON(List<Libreria> LstLibrerias)
+        {
+
+            string json = JsonConvert.SerializeObject(LstLibrerias);
+
+            Utils.GeneralMethod.WriteJSONFile("ListadoLibrerias.JSON", json, "TipoLibreria");
+        }
+
         #endregion
 
     }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.LibraryPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,24 +39,14 @@
             this.LibraryPanel.AutoScroll = true;
             this.LibraryPanel.Location = new System.Drawing.Point(12, 12);
             this.LibraryPanel.Name = "LibraryPanel";
-            this.LibraryPanel.Size = new System.Drawing.Size(880, 466);
+            this.LibraryPanel.Size = new System.Drawing.Size(849, 466);
             this.LibraryPanel.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(930, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Menú de opciones";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.GreenYellow;
-            this.button1.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(936, 76);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(915, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 36);
             this.button1.TabIndex = 4;
@@ -67,8 +56,8 @@
             // Eliminar
             // 
             this.Eliminar.BackColor = System.Drawing.Color.Red;
-            this.Eliminar.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Eliminar.Location = new System.Drawing.Point(936, 442);
+            this.Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminar.Location = new System.Drawing.Point(915, 442);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(143, 36);
             this.Eliminar.TabIndex = 3;
@@ -91,13 +80,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.fondo_Javier;
-            this.ClientSize = new System.Drawing.Size(1091, 490);
+            this.ClientSize = new System.Drawing.Size(1068, 490);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Eliminar);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LibraryPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Home";
@@ -112,7 +99,6 @@
         #endregion
 
         public System.Windows.Forms.FlowLayoutPanel LibraryPanel;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Label label1;

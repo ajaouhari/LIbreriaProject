@@ -12,8 +12,10 @@ using WindowsFormsApp1.Constants;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Utils;
 
+
 namespace WindowsFormsApp1
 {
+
     public partial class Edit : Form
     {
 
@@ -36,7 +38,7 @@ namespace WindowsFormsApp1
 
         public Edit(ref Libreria lb) : this()
         {             
-            //foto.Image = Image.FromFile(lb.Photo);
+            fotoPictureBox.ImageLocation = lb.Photo;
             description.Text = lb.Description;
             nombre.Text = lb.Name;
             Lb = lb;
@@ -62,7 +64,7 @@ namespace WindowsFormsApp1
             {
                 string sFileName = ImageSelector.FileName;
 
-                foto.Image = Image.FromFile(sFileName);
+                fotoPictureBox.ImageLocation = sFileName;
 
                 if (!string.IsNullOrEmpty(sFileName))
                 {
@@ -85,9 +87,11 @@ namespace WindowsFormsApp1
 
                 Lb.Description = description.Text;
                 Lb.Name = nombre.Text;
-                //Lb.Photo = string.IsNullOrEmpty(foto.ImageLocation) ? Lb.Photo : foto.ImageLocation;
 
-                this.Close();
+                string exampole = fotoPictureBox.ImageLocation;
+                Lb.Photo = string.IsNullOrEmpty(fotoPictureBox.ImageLocation) ? Lb.Photo : fotoPictureBox.ImageLocation;
+
+                this.Close(); 
 
             }
             else

@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         #region Properties
 
         public int IdLibreria { get; set; }
+        public string Nombre_libreria;
         public Libreria Lb;
 
         #endregion
@@ -27,14 +28,20 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public LibraryUserControl(ref Libreria lb) : this()
+        public LibraryUserControl(ref Libreria Libreria) : this()
         {
-            IdLibreria = lb.Id;
-            Nombre.Text = lb.Name;
-            Descripcion.Text = lb.Description;
-            lb.Photo = string.IsNullOrEmpty(lb.Photo) ? @"C:\Users\bitJavi\Pictures\abdel.jpg" : lb.Photo;
-            this.Foto.Image = Image.FromFile(lb.Photo);
-            Lb = lb;
+            //Controles
+            Nombre.Text = Libreria.Name;
+            Descripcion.Text = Libreria.Description;
+            FotoPictureBox.Image = Image.FromFile(Libreria.Photo);
+
+            //variables
+            IdLibreria = Libreria.Id;
+            //Libreria.Photo = string.IsNullOrEmpty(Libreria.Photo) ? @"..\..\Resources\libro.jpg" : Libreria.Photo;
+            
+            Lb = Libreria;
+            
+            
         }
 
         public void RefreshLabels()
@@ -71,7 +78,10 @@ namespace WindowsFormsApp1
             {
                 if (Lb.Id >= 0)
                 {
+
+
                     ConstantText.Home.DelteFromList(Lb.Id);
+                    
 
                 }
             }
