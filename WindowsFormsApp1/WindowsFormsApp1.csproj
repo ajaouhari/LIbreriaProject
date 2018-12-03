@@ -155,6 +155,7 @@
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="ExtensionMethod\" />
+    <Folder Include="JSON\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

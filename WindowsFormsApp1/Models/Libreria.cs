@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,20 +80,43 @@ namespace WindowsFormsApp1
 
         public static void FillLibrary(List<Libreria> LstLibrerias)
         {
-            for (int i = 0; i < 50; i++)
+
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter(@"..\..\JSON\ListadoLibrerias.JSON"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                Libreria factura1 = new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i);
-                LstLibrerias.Add(factura1);
+                for (int i = 0; i < 50; i++)
+                {
+                    Libreria factura1 = new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i);
+                    LstLibrerias.Add(factura1);
+                    
+                }
+                serializer.Serialize(writer, LstLibrerias);
             }
+               
+            Deserialize(@"ListadoLibrerias.JSON", LstLibrerias);
 
         }
 
-        public static void SaveLibraryJSON(List<Libreria> LstLibrerias)
+        public static void Deserialize(string fileName, List<Libreria> LstLibrerias)
         {
+            try
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamReader file = File.OpenText(fileName))
+                {
 
-            string json = JsonConvert.SerializeObject(LstLibrerias);
-
-            Utils.GeneralMethod.WriteJSONFile("ListadoLibrerias.JSON", json, "TipoLibreria");
+                    LstLibrerias.AddRange((List<Libreria>)serializer.Deserialize(file, typeof(List<Libreria>)));
+                                                       
+                }
+                    
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
         }
 
         #endregion

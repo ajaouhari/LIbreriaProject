@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.Models
     
     public class BaseClass
     {
-        public Home Home { get; set; }
+        
         
     }
 

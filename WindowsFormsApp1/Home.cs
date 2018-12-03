@@ -45,8 +45,9 @@ namespace WindowsFormsApp1
         private void Home_Load(object sender, EventArgs e)
         {
 
-            Libreria.FillLibrary(this.LstLibrerias);
+            Libreria.FillLibrary(LstLibrerias);
 
+                          
             foreach (var Libreria in this.LstLibrerias)
             {
                 var lb = Libreria;
@@ -65,7 +66,7 @@ namespace WindowsFormsApp1
                 this.LibraryPanel.Refresh();
                 ConstantText.RefresList = false;
 
-                Libreria.SaveLibraryJSON(LstLibrerias);
+                //Libreria.SaveLibraryJSON(LstLibrerias);
             }
         }
 
