@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,6 +55,24 @@ namespace WindowsFormsApp1.Utils
             }
         }
 
+        public static void LstLibreriasVacias() //Pos si algun dia se borra el fichero de JSON librerias volver a crearlo, pero esa un array de ejemplos de libreria.
+        {
+            List<Libreria> LstLibrerias = new List<Libreria>();
+
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter(@"..\..\JSON\ListadoLibrerias.JSON"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                for (int i = 0; i < 50; i++)
+                {
+                    Libreria factura1 = new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i);
+                    LstLibrerias.Add(factura1);
+
+                }
+                serializer.Serialize(writer, LstLibrerias);
+
+            }
+        }
 
         #endregion
 

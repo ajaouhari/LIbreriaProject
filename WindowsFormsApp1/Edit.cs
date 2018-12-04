@@ -105,8 +105,12 @@ namespace WindowsFormsApp1
 
         }
 
+
         #endregion
 
+        private void fotoPictureBox_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

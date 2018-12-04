@@ -9,7 +9,7 @@ using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1
 {
-    public class Libreria : BaseClass
+    public class Libreria
     {
 
         #region Fields
@@ -81,19 +81,8 @@ namespace WindowsFormsApp1
         public static void FillLibrary(List<Libreria> LstLibrerias)
         {
 
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter(@"..\..\JSON\ListadoLibrerias.JSON"))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-                for (int i = 0; i < 50; i++)
-                {
-                    Libreria factura1 = new Libreria("Libreria " + i, @"..\..\Resources\libro.jpg", "Libreria " + i, "Libreria " + i, i);
-                    LstLibrerias.Add(factura1);
-                    
-                }
-                serializer.Serialize(writer, LstLibrerias);
-            }
-               
+            //Utils.GeneralMethod.LstLibreriasVacias();
+
             Deserialize(@"ListadoLibrerias.JSON", LstLibrerias);
 
         }
